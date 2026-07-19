@@ -1,0 +1,12 @@
+/* ==========================================================================
+   GMH — Web font loading
+   Brand fonts specified: "Rafaella" (title) + "Univia Pro" (text). Both are
+   paid/commercial faces (Sproviero Type / Mostardesign — Adobe Fonts & MyFonts
+   only) with no files supplied to this project. Substituted with the closest
+   free Google Fonts matches below — see readme.md "Typography" for the
+   substitution rationale. Swap these two @import families for the real
+   webfont files the moment they're available; every other token references
+   the family by CSS variable, so no other file needs to change.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');

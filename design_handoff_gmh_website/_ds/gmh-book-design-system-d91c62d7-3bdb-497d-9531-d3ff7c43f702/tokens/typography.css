@@ -1,0 +1,40 @@
+/* ==========================================================================
+   GMH — Type tokens
+   Rafaella (sub: Yeseva One) — display serif, chapter/decade titles, ALL CAPS.
+   Univia Pro (sub: Manrope) — geometric text sans, reading body + labels.
+   Discrete properties (not CSS `font` shorthand) so each is easy to read,
+   override, and doesn't trip shorthand-family parsing.
+   ========================================================================== */
+
+:root {
+  /* ---- Families ---------------------------------------------------------*/
+  --font-display: 'Fraunces', 'Rafaella', Georgia, 'Times New Roman', serif;
+  --font-body:    'Manrope', 'Univia Pro', -apple-system, 'Segoe UI', sans-serif;
+
+  /* ---- Display scale (Rafaella) — decade numerals, chapter titles ------- */
+  --size-display-2xl: clamp(4.5rem, 4rem + 4vw, 9rem);     /* decade numerals, book cover */
+  --size-display-xl:  clamp(3rem, 2.6rem + 2.6vw, 5.5rem); /* chapter title */
+  --size-display-lg:  clamp(2rem, 1.8rem + 1.2vw, 3rem);   /* spread title */
+  --size-display-md:  clamp(1.5rem, 1.4rem + 0.5vw, 1.875rem); /* pull-quote */
+  --leading-display-tight: 0.94;
+  --leading-display: 1.02;
+  --weight-display: 400;
+
+  /* ---- Body scale (Univia Pro) — reading, captions, UI chrome ----------- */
+  --size-body-lg:  1.375rem;  /* lede paragraph / drop-cap body */
+  --size-body:     1.125rem;  /* default reading */
+  --size-body-sm:  1rem;      /* dense text */
+  --size-caption:  0.8125rem; /* photo credits */
+  --size-label:    0.75rem;   /* era tags, folios — always uppercase + tracked */
+  --leading-body: 1.65;
+  --leading-body-tight: 1.5;
+  --weight-body-regular: 400;
+  --weight-body-medium: 500;
+  --weight-body-bold: 700;
+  --weight-body-black: 800;
+
+  /* ---- Tracking (letter-spacing) ---------------------------------------- */
+  --tracking-display: 0.01em;
+  --tracking-label:   0.14em;
+  --tracking-caption: 0.02em;
+}

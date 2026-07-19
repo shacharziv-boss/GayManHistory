@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap">
+  <style>
+    body { margin: 0; background: #f0eee9; font-family: system-ui, sans-serif; }
+    .dv-turn { padding: 40px 44px 32px; border-bottom: 1px solid rgba(0,0,0,.08); scroll-margin-top: 16px; }
+    .dv-thd { display: flex; align-items: baseline; gap: 10px; margin: 0 0 8px; }
+    .dv-tid { font: 600 10px ui-monospace, Menlo, monospace; padding: 3px 7px; background: #1a1a1a; color: #fff; border-radius: 4px; text-decoration: none; }
+    .dv-tname { font: 600 13px/1.2 system-ui, sans-serif; color: #1a1a1a; }
+    .dv-tnote { font: 400 12.5px/1.5 system-ui, sans-serif; color: rgba(0,0,0,.55); max-width: 640px; margin: 0 0 22px; }
+    .dv-opts { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+    .dv-opt { flex: none; display: flex; flex-direction: column; gap: 9px; scroll-margin-top: 16px; }
+    .dv-oid { font: 600 10.5px ui-monospace, Menlo, monospace; padding: 3px 7px; background: rgba(0,0,0,.08); color: #1a1a1a; border-radius: 5px; text-decoration: none; }
+    .dv-olabel { display: flex; flex-direction: column; gap: 2px; font: 400 11px/1.3 system-ui, sans-serif; color: rgba(0,0,0,.55); }
+    .dv-oname { font: 700 13px/1.3 system-ui, sans-serif; color: #1a1a1a; }
+    .dv-card { max-width: 100%; background: #fff; border: 1px solid rgba(0,0,0,.12); box-shadow: 0 1px 3px rgba(0,0,0,.06); overflow: hidden; }
+    .dv-opt:target .dv-oid { background: #2a78d6; color: #fff; }
+    .dv-next { margin: 22px 0 0; font: 12px/1.5 system-ui, sans-serif; color: rgba(0,0,0,.5); }
+
+    .wf-label { font-family: 'Patrick Hand', cursive; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .wf-swatch { width: 12px; height: 12px; border: 1px solid rgba(0,0,0,.3); flex: none; }
+    .wf-img { background: repeating-linear-gradient(45deg, #ccc, #ccc 7px, #f2f2f2 7px, #f2f2f2 14px); border: 1px solid #999; }
+    .wf-line { height: 7px; background: #d4d4d4; border-radius: 1px; }
+    .wf-btn { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #333; padding: 7px 16px; font-family: 'Patrick Hand', cursive; font-size: 13px; color: #333; width: fit-content; }
+    .wf-sec { border-top: 2px dashed #aaa; padding: 16px 18px; box-sizing: border-box; }
+    .wf-chip { font-family: 'Patrick Hand', cursive; font-size: 11px; border: 1px solid #999; padding: 2px 8px; color: #666; width: fit-content; }
+  </style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Landing page — 3 structural directions (desktop)</span></div>
+  <p class="dv-tnote">Low-fi structure only — colors/type are placeholders, swatches note where the five GMH surfaces (<span style="color:#E5057F">magenta</span>, <span style="color:#E2211C">red</span>, <span style="color:#1230E0">blue</span>, black, white) would land. Once a direction is picked I'll wireframe the product page + cart/checkout flow and mobile to match.</p>
+  <div class="dv-opts">
+
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><span class="dv-oname">Editorial Scroll — reads like the book itself</span></div>
+      <div class="dv-card" style="width:400px">
+
+        <div class="wf-sec" style="border-top:none;background:#000;color:#fff;padding:26px 18px;">
+          <div class="wf-label" style="color:#ccc;"><span class="wf-swatch" style="background:#0A0A0A"></span>HERO — cover block</div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:11px;color:#999;margin-bottom:10px;">GMH wordmark, top-left</div>
+          <div class="wf-img" style="height:220px;margin-bottom:12px;"></div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:26px;line-height:1;margin-bottom:10px;">"GMH — NEW YORK"</div>
+          <div class="wf-btn" style="border-color:#fff;color:#fff;">Buy the book →</div>
+        </div>
+
+        <div class="wf-sec">
+          <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>DECADE INTRO — 1900–2000 strip</div>
+          <div style="display:flex;gap:8px;">
+            <div class="wf-chip">1900</div><div class="wf-chip">1940</div><div class="wf-chip">1960</div><div class="wf-chip">1980</div>
+          </div>
+          <div class="wf-line" style="width:90%;margin-top:10px;"></div>
+          <div class="wf-line" style="width:70%;"></div>
+        </div>
+
+        <div class="wf-sec" style="background:#E5057F;color:#fff;">
+          <div class="wf-label" style="color:#fff;"><span class="wf-swatch" style="background:#E5057F"></span>MANIFESTO — pull-quote block</div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:20px;line-height:1.25;max-width:22ch;">"a manifesto line, set large, like a PullQuote"</div>
+        </div>
+
+        <div class="wf-sec" style="display:flex;gap:14px;">
+          <div class="wf-img" style="width:120px;height:150px;flex:none;"></div>
+          <div style="flex:1;">
+            <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>ABOUT + AUTHOR</div>
+            <div class="wf-line" style="width:100%;"></div>
+            <div class="wf-line" style="width:95%;"></div>
+            <div class="wf-line" style="width:60%;margin-bottom:10px;"></div>
+            <div class="wf-chip">author name / credit</div>
+          </div>
+        </div>
+
+        <div class="wf-sec">
+          <div class="wf-label"><span class="wf-swatch" style="background:#1230E0"></span>MERCH — "artifacts from the book" grid</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div><div class="wf-img" style="height:90px;"></div><div class="wf-line" style="width:70%;margin-top:6px;"></div></div>
+            <div><div class="wf-img" style="height:90px;"></div><div class="wf-line" style="width:70%;margin-top:6px;"></div></div>
+            <div><div class="wf-img" style="height:90px;"></div><div class="wf-line" style="width:70%;margin-top:6px;"></div></div>
+            <div><div class="wf-img" style="height:90px;"></div><div class="wf-line" style="width:70%;margin-top:6px;"></div></div>
+          </div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:11px;color:#888;margin-top:8px;">mug · poster · candle · towel — each opens product page</div>
+        </div>
+
+        <div class="wf-sec" style="background:#0A0A0A;color:#fff;">
+          <div class="wf-label" style="color:#ccc;"><span class="wf-swatch" style="background:#0A0A0A"></span>FOOTER — newsletter signup</div>
+          <div style="display:flex;gap:8px;margin-top:6px;">
+            <div class="wf-line" style="flex:1;background:#333;"></div>
+            <div class="wf-btn" style="border-color:#fff;color:#fff;padding:6px 12px;">Join</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><span class="dv-oname">Shop-forward — merch surfaces early, conversion-led</span></div>
+      <div class="dv-card" style="width:400px">
+
+        <div class="wf-sec" style="border-top:none;background:#E2211C;color:#fff;padding:24px 18px;">
+          <div class="wf-label" style="color:#fff;"><span class="wf-swatch" style="background:#E2211C"></span>HERO — book + primary CTA</div>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div class="wf-img" style="width:110px;height:150px;flex:none;"></div>
+            <div>
+              <div style="font-family:'Patrick Hand',cursive;font-size:24px;line-height:1;margin-bottom:8px;">"Moved Beyond Words"</div>
+              <div class="wf-line" style="width:140px;background:rgba(255,255,255,.5);"></div>
+              <div class="wf-btn" style="border-color:#fff;color:#fff;margin-top:10px;">Buy the book — $42</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-sec">
+          <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>SHOP THE BOOK — merch grid, 4 items × 3 print variants</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;">
+            <div><div class="wf-img" style="height:70px;"></div><div class="wf-line" style="margin-top:5px;"></div><div style="display:flex;gap:2px;margin-top:3px;"><span class="wf-swatch" style="width:8px;height:8px;background:#E5057F"></span><span class="wf-swatch" style="width:8px;height:8px;background:#1230E0"></span><span class="wf-swatch" style="width:8px;height:8px;background:#0A0A0A"></span></div></div>
+            <div><div class="wf-img" style="height:70px;"></div><div class="wf-line" style="margin-top:5px;"></div><div style="display:flex;gap:2px;margin-top:3px;"><span class="wf-swatch" style="width:8px;height:8px;background:#E5057F"></span><span class="wf-swatch" style="width:8px;height:8px;background:#1230E0"></span><span class="wf-swatch" style="width:8px;height:8px;background:#0A0A0A"></span></div></div>
+            <div><div class="wf-img" style="height:70px;"></div><div class="wf-line" style="margin-top:5px;"></div><div style="display:flex;gap:2px;margin-top:3px;"><span class="wf-swatch" style="width:8px;height:8px;background:#E5057F"></span><span class="wf-swatch" style="width:8px;height:8px;background:#1230E0"></span><span class="wf-swatch" style="width:8px;height:8px;background:#0A0A0A"></span></div></div>
+            <div><div class="wf-img" style="height:70px;"></div><div class="wf-line" style="margin-top:5px;"></div><div style="display:flex;gap:2px;margin-top:3px;"><span class="wf-swatch" style="width:8px;height:8px;background:#E5057F"></span><span class="wf-swatch" style="width:8px;height:8px;background:#1230E0"></span><span class="wf-swatch" style="width:8px;height:8px;background:#0A0A0A"></span></div></div>
+          </div>
+        </div>
+
+        <div class="wf-sec">
+          <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>BOOK DETAIL — decades, TOC, sample spreads</div>
+          <div style="display:flex;gap:8px;">
+            <div class="wf-img" style="flex:1;height:80px;"></div>
+            <div class="wf-img" style="flex:1;height:80px;"></div>
+            <div class="wf-img" style="flex:1;height:80px;"></div>
+          </div>
+          <div class="wf-line" style="width:80%;margin-top:8px;"></div>
+        </div>
+
+        <div class="wf-sec" style="background:#1230E0;color:#fff;">
+          <div class="wf-label" style="color:#fff;"><span class="wf-swatch" style="background:#1230E0"></span>MANIFESTO — side callout, not full block</div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:15px;max-width:26ch;">short manifesto pull-line, smaller than 1a</div>
+        </div>
+
+        <div class="wf-sec" style="display:flex;gap:14px;">
+          <div class="wf-img" style="width:100px;height:120px;flex:none;"></div>
+          <div style="flex:1;">
+            <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>ABOUT + AUTHOR — compact</div>
+            <div class="wf-line" style="width:100%;"></div>
+            <div class="wf-line" style="width:70%;"></div>
+          </div>
+        </div>
+
+        <div class="wf-sec" style="background:#0A0A0A;color:#fff;">
+          <div class="wf-label" style="color:#ccc;"><span class="wf-swatch" style="background:#0A0A0A"></span>FOOTER — newsletter + cart icon</div>
+          <div style="display:flex;gap:8px;margin-top:6px;">
+            <div class="wf-line" style="flex:1;background:#333;"></div>
+            <div class="wf-btn" style="border-color:#fff;color:#fff;padding:6px 12px;">Join</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><span class="dv-oname">Split Narrative — alternating zig-zag blocks</span></div>
+      <div class="dv-card" style="width:400px">
+
+        <div class="wf-sec" style="border-top:none;display:flex;">
+          <div class="wf-img" style="width:50%;height:180px;"></div>
+          <div style="width:50%;background:#1230E0;color:#fff;padding:18px;box-sizing:border-box;">
+            <div class="wf-label" style="color:#fff;"><span class="wf-swatch" style="background:#1230E0"></span>HERO — split</div>
+            <div style="font-family:'Patrick Hand',cursive;font-size:20px;line-height:1.15;">"GMH — New York"</div>
+            <div class="wf-btn" style="border-color:#fff;color:#fff;margin-top:10px;">Buy the book →</div>
+          </div>
+        </div>
+
+        <div class="wf-sec" style="display:flex;flex-direction:row-reverse;">
+          <div class="wf-img" style="width:50%;height:170px;"></div>
+          <div style="width:50%;padding:18px;box-sizing:border-box;">
+            <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>BOOK — split, reversed</div>
+            <div class="wf-line" style="width:95%;"></div>
+            <div class="wf-line" style="width:80%;"></div>
+            <div class="wf-line" style="width:60%;"></div>
+          </div>
+        </div>
+
+        <div class="wf-sec" style="background:#E5057F;color:#fff;padding:26px 18px;">
+          <div class="wf-label" style="color:#fff;"><span class="wf-swatch" style="background:#E5057F"></span>MANIFESTO — full-bleed, center</div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:22px;text-align:center;line-height:1.2;">"manifesto, centered and large"</div>
+        </div>
+
+        <div class="wf-sec">
+          <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>MERCH — horizontal scroll carousel</div>
+          <div style="display:flex;gap:8px;overflow:hidden;">
+            <div class="wf-img" style="width:90px;height:100px;flex:none;"></div>
+            <div class="wf-img" style="width:90px;height:100px;flex:none;"></div>
+            <div class="wf-img" style="width:90px;height:100px;flex:none;"></div>
+            <div class="wf-img" style="width:90px;height:100px;flex:none;opacity:.4;"></div>
+          </div>
+          <div style="font-family:'Patrick Hand',cursive;font-size:11px;color:#888;margin-top:6px;">swipe / drag — each card = 1 product, 3 print variants inside</div>
+        </div>
+
+        <div class="wf-sec" style="display:flex;">
+          <div class="wf-img" style="width:50%;height:160px;"></div>
+          <div style="width:50%;background:#0A0A0A;color:#fff;padding:18px;box-sizing:border-box;">
+            <div class="wf-label" style="color:#ccc;"><span class="wf-swatch" style="background:#0A0A0A"></span>ABOUT + AUTHOR — split</div>
+            <div class="wf-line" style="width:90%;background:#444;"></div>
+            <div class="wf-line" style="width:70%;background:#444;"></div>
+          </div>
+        </div>
+
+        <div class="wf-sec" style="background:#f2f2f2;">
+          <div class="wf-label"><span class="wf-swatch" style="background:#fff"></span>FOOTER — newsletter, centered</div>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:6px;">
+            <div class="wf-line" style="width:160px;"></div>
+            <div class="wf-btn">Join</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "go with <a class="dv-oid" href="#1b">1b</a>, now wireframe the product page + cart" · "mix <a class="dv-oid" href="#1a">1a</a>'s manifesto with <a class="dv-oid" href="#1c">1c</a>'s merch carousel" · "show mobile for <a class="dv-oid" href="#1a">1a</a>"</p>
+</section>
+
+</x-dc>
+</body>
+</html>

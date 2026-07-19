@@ -1,0 +1,31 @@
+/* ==========================================================================
+   GMH — Spacing, radius & layout tokens
+   Editorial rhythm: generous whitespace, flat geometry. Radii are ~0 —
+   this is a museum-wall aesthetic, not a soft-UI one.
+   ========================================================================== */
+
+:root {
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+  --space-11: 192px;
+
+  /* Page margins — book-spread feel at common preview widths */
+  --page-margin: clamp(24px, 6vw, 96px);
+  --page-margin-sm: clamp(16px, 4vw, 48px);
+
+  /* Radii — intentionally near-zero. Only the small era-tag pill softens. */
+  --radius-0: 0px;
+  --radius-tag: 2px;
+
+  /* Hairline weight */
+  --rule-weight: 1px;
+  --rule-weight-bold: 3px;
+}

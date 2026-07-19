@@ -1,0 +1,48 @@
+/* ==========================================================================
+   GMH — Color tokens
+   Bold, flat, saturated background colors carrying white or black type —
+   a museum-wall-didactic palette, not a UI palette. Five backgrounds only:
+   magenta, red, blue, black, white. No gradients, no tints, no shadows.
+   ========================================================================== */
+
+:root {
+  /* ---- Base hues (the only five backgrounds in this system) ------------ */
+  --gmh-magenta: #E5057F;
+  --gmh-red:     #E2211C;
+  --gmh-blue:    #1230E0;
+  --gmh-black:   #0A0A0A;
+  --gmh-white:   #FFFFFF;
+
+  /* ---- Supporting neutrals (never a background; hairlines + muted text only) */
+  --gmh-paper:      #F7F5F1;   /* warm off-white, used only for photo mattes / captions strips */
+  --gmh-ink-70:     rgba(10, 10, 10, 0.72);
+  --gmh-ink-45:     rgba(10, 10, 10, 0.45);
+  --gmh-paper-70:   rgba(255, 255, 255, 0.72);
+  --gmh-paper-45:   rgba(255, 255, 255, 0.45);
+
+  /* ---- Semantic: surfaces (the five approved section/page backgrounds) - */
+  --surface-magenta: var(--gmh-magenta);
+  --surface-red:      var(--gmh-red);
+  --surface-blue:      var(--gmh-blue);
+  --surface-black:    var(--gmh-black);
+  --surface-white:    var(--gmh-white);
+
+  /* ---- Semantic: text-on-color (only white or black type, ever) -------- */
+  --text-on-dark:        var(--gmh-white);
+  --text-on-dark-muted:  var(--gmh-paper-70);
+  --text-on-dark-faint:  var(--gmh-paper-45);
+
+  --text-on-light:       var(--gmh-black);
+  --text-on-light-muted: var(--gmh-ink-70);
+  --text-on-light-faint: var(--gmh-ink-45);
+
+  /* ---- Semantic: hairlines / dividers ----------------------------------- */
+  --hairline-on-dark:  rgba(255, 255, 255, 0.28);
+  --hairline-on-light: rgba(10, 10, 10, 0.16);
+
+  /* ---- Focus / interactive (kept minimal — editorial system, not app UI) */
+  --link-on-light: var(--gmh-black);
+  --link-on-light-hover: var(--gmh-red);
+  --link-on-dark: var(--gmh-white);
+  --link-on-dark-hover: var(--gmh-paper-70);
+}
