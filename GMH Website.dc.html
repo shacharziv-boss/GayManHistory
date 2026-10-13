@@ -36,7 +36,7 @@
     <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;align-items:center;gap:var(--space-7);font:var(--weight-body-bold) var(--size-label)/1 var(--font-body);text-transform:uppercase;letter-spacing:var(--tracking-label);">
         <a href="#book" style="text-decoration:none;">Book</a>
-        <a href="#shop" style="text-decoration:none;">Shop</a>
+        <a href="#shop" style="display:none;text-decoration:none;">Shop</a>
         <a href="#about" style="text-decoration:none;">About</a>
         <button onClick="{{ openCart }}" style="background:none;border:none;padding:0;cursor:pointer;font:inherit;color:inherit;text-transform:uppercase;letter-spacing:var(--tracking-label);">Cart ({{ cartCount }})</button>
       </div>
@@ -58,7 +58,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:var(--space-6);padding:var(--space-7) var(--page-margin);">
         <a href="#book" onClick="{{ closeMenu }}" style="text-decoration:none;color:var(--text-on-dark);font:var(--weight-display) var(--size-display-sm)/1 var(--font-display);text-transform:uppercase;">Book</a>
-        <a href="#shop" onClick="{{ closeMenu }}" style="text-decoration:none;color:var(--text-on-dark);font:var(--weight-display) var(--size-display-sm)/1 var(--font-display);text-transform:uppercase;">Shop</a>
+        <a href="#shop" onClick="{{ closeMenu }}" style="display:none;text-decoration:none;color:var(--text-on-dark);font:var(--weight-display) var(--size-display-sm)/1 var(--font-display);text-transform:uppercase;">Shop</a>
         <a href="#about" onClick="{{ closeMenu }}" style="text-decoration:none;color:var(--text-on-dark);font:var(--weight-display) var(--size-display-sm)/1 var(--font-display);text-transform:uppercase;">About</a>
         <button onClick="{{ openCart }}" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;color:var(--text-on-dark);font:var(--weight-display) var(--size-display-sm)/1 var(--font-display);text-transform:uppercase;">Cart ({{ cartCount }})</button>
       </div>
@@ -327,7 +327,7 @@
   </div>
 
   <!-- MERCH -->
-  <div data-screen-label="Merch" id="shop" style="padding:50px var(--page-margin) var(--space-9);box-sizing:border-box;background:var(--surface-white);">
+  <div data-screen-label="Merch" id="shop" style="display:none;padding:50px var(--page-margin) var(--space-9);box-sizing:border-box;background:var(--surface-white);">
     <div style="font:var(--weight-body-bold) var(--size-label)/1 var(--font-body);text-transform:uppercase;letter-spacing:var(--tracking-label);color:var(--text-on-light-faint);margin-bottom:var(--space-3);">BRING HISTORY TO EVERY DAY LIFE</div>
     <div style="font:var(--weight-display) var(--size-display-lg)/var(--leading-display-tight) var(--font-display);text-transform:uppercase;margin-bottom:var(--space-8);">CHOOS LOVE ALL AROUND</div>
 
